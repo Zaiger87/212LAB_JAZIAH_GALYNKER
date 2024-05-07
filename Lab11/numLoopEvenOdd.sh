@@ -16,18 +16,17 @@ echo -n "enter a number between 0-100: "
 read userInt
 
 # prints message to the terminal stating the values it will print
-echo "Numbers form 1 to $userInt: "
+echo "Numbers from 1 to $userInt: "
 for i in $(seq 1 $userInt) 
 do
 
 # prints all the values from 1 to the number entered to the terminal
 echo $i 
+# conditional statement to check if each value printed is even or odd 
+if [ $((i % 2)) -eq 0 ]
+    then echo "The number is even!"  
+else 
+    echo "The number is odd! "
+fi
 done
 
-# condtional expressions that test for even and odd integers
-
-if [ $((userInt % 2)) -gt 0 ]
-    then echo "The number $userInt is odd. "
-else
-    echo "The number $userInt is even. "
-fi
